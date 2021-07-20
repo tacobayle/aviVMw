@@ -517,6 +517,12 @@ variable "vmw" {
       workers = {
         count = 3
       }
+      argocd = {
+        status = true
+        manifest_url = "https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml"
+        namespace = "argocd"
+        client_url = "https://github.com/argoproj/argo-cd/releases/download/v2.0.4/argocd-linux-amd64"
+      }
       clusters = [
         {
           name = "cluster1" # cluster name
@@ -524,9 +530,6 @@ variable "vmw" {
           username = "ubuntu" # default username dor docker and to connect
           version = "1.21.3-00" # k8s version
           namespaces = [
-            {
-              name= "avi-system"
-            },
             {
               name= "ns1"
             },
@@ -538,6 +541,7 @@ variable "vmw" {
             },
           ]
           ako = {
+            namespace = "avi-system"
             version = "1.4.2"
             helm = {
               url = "https://projects.registry.vmware.com/chartrepo/ako"
@@ -590,9 +594,6 @@ variable "vmw" {
           version = "1.21.3-00"
           namespaces = [
             {
-              name= "avi-system"
-            },
-            {
               name= "ns1"
             },
             {
@@ -603,6 +604,7 @@ variable "vmw" {
             },
           ]
           ako = {
+            namespace = "avi-system"
             version = "1.4.2"
             helm = {
               url = "https://projects.registry.vmware.com/chartrepo/ako"
@@ -656,9 +658,6 @@ variable "vmw" {
           version = "1.21.3-00"
           namespaces = [
             {
-              name= "avi-system"
-            },
-            {
               name= "ns1"
             },
             {
@@ -669,6 +668,7 @@ variable "vmw" {
             },
           ]
           ako = {
+            namespace = "avi-system"
             version = "1.4.2"
             helm = {
               url = "https://projects.registry.vmware.com/chartrepo/ako"

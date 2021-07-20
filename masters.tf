@@ -20,6 +20,9 @@ data "template_file" "master_userdata" {
     cni = var.vmw.kubernetes.clusters[count.index].cni.name
     cniUrl = var.vmw.kubernetes.clusters[count.index].cni.url
     akoVersion = var.vmw.kubernetes.clusters[count.index].ako.version
+    argocd_status = var.vmw.kubernetes.argocd.status
+    argocd_manifest_url = var.vmw.kubernetes.argocd.manifest_url
+    argocd_client_url = var.vmw.kubernetes.argocd.client_url
   }
 }
 

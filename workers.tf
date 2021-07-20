@@ -11,6 +11,8 @@ data "template_file" "worker_userdata" {
     cni = var.vmw.kubernetes.clusters[floor(count.index / var.vmw.kubernetes.workers.count)].cni.name
     cniUrl = var.vmw.kubernetes.clusters[floor(count.index / var.vmw.kubernetes.workers.count)].cni.url
     akoVersion = var.vmw.kubernetes.clusters[floor(count.index / var.vmw.kubernetes.workers.count)].ako.version
+    argocd_status = var.vmw.kubernetes.argocd.status
+    argocd_manifest_url = var.vmw.kubernetes.argocd.manifest_url
   }
 }
 

@@ -38,5 +38,5 @@ output "destroy" {
 }
 
 output "ako_install" {
-  value = "helm --debug install ako/ako --generate-name --version ${var.vmw.kubernetes.clusters[0].ako.version} -f values.yml --namespace=avi-system --set avicredentials.username=admin --set avicredentials.password=$avi_password"
+  value = "helm --debug install ako/ako --generate-name --version ${var.vmw.kubernetes.clusters[0].ako.version} -f values.yml --namespace=${var.vmw.kubernetes.clusters[0].ako.namespace} --set avicredentials.username=admin --set avicredentials.password=$avi_password"
 }

@@ -44,8 +44,18 @@ write_files:
       ping foo -c 1
       while [ $? -ne 0 ] ; do docker login --username ${docker_registry_username} --password ${docker_registry_password} ; sleep 5 ; done
       wget ${cniUrl} -O cni.yml
-      for image in $(cat cni.yml | grep 'image: ' | awk -F 'image: ' '{print $2}'); do docker pull $image ; done
-      docker image pull avinetworks/ako:${akoVersion}
+      #
+      # argo-cd image download
+      #
+      argocd=${argocd_status}
+      if [ "$argocd" = true ] ; then
+      wget ${argocd_manifest_url} -O argocd.yml
+      for image in $(cat argocd.yml | grep 'image: ' | awk -F 'image: ' '{print $2}'); do docker pull $image ; done
+      #
+      #
+      #
+      #for image in $(cat cni.yml | grep 'image: ' | awk -F 'image: ' '{print $2}'); do docker pull $image ; done
+      #docker image pull avinetworks/ako:${akoVersion}
       #cni=${cni}
       #[ $cni == 'calico' ] && ( echo "CNI is Calico" ; docker pull calico/pod2daemon-flexvol:v3.17.2  ; docker pull calico/node:v3.17.2 ; docker pull calico/cni:v3.17.2 ; docker pull calico/kube-controllers:v3.17.2)
       echo "cloud init done" | tee /tmp/cloudInitDone.log
