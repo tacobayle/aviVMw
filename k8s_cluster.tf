@@ -68,7 +68,7 @@ resource "null_resource" "argocd" {
     inline = [
       "kubectl create namespace ${var.vmw.kubernetes.argocd.namespace}",
       "kubectl apply -n argocd -f ${var.vmw.kubernetes.argocd.manifest_url}",
-      "kubectl patch svc argocd-server -n ${var.vmw.kubernetes.argocd.namespace} -p '{\\\"spec\\\": {\\\"type\\\": \\\"LoadBalancer\\\"}}'"
+      "kubectl patch svc argocd-server -n ${var.vmw.kubernetes.argocd.namespace} -p '{\"spec\": {\"type\": \"LoadBalancer\"}}'"
     ]
   }
 }
