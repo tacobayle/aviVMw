@@ -522,7 +522,7 @@ variable "vmw" {
           name = "cluster1" # cluster name
           netplanApply = true
           username = "ubuntu" # default username dor docker and to connect
-          version = "1.18.2-00" # k8s version
+          version = "1.21.3-00" # k8s version
           namespaces = [
             {
               name= "avi-system"
@@ -554,7 +554,7 @@ variable "vmw" {
             pod = "192.168.0.0/16"
           }
           docker = {
-            version = "5:19.03.8~3-0~ubuntu-bionic"
+            version = "5:20.10.7~3-0~ubuntu-bionic"
           }
           service = {
             type = "ClusterIP"
@@ -587,7 +587,7 @@ variable "vmw" {
           name = "cluster2"
           netplanApply = true
           username = "ubuntu"
-          version = "1.18.2-00"
+          version = "1.21.3-00"
           namespaces = [
             {
               name= "avi-system"
@@ -619,14 +619,14 @@ variable "vmw" {
             pod = "192.168.1.0/16"
           }
           docker = {
-            version = "5:19.03.8~3-0~ubuntu-bionic"
+            version = "5:20.10.7~3-0~ubuntu-bionic"
           }
           service = {
             type = "ClusterIP"
           }
           interface = "ens224"
           cni = {
-            url = "https://github.com/vmware-tanzu/antrea/releases/download/v0.9.1/antrea.yml"
+            url = "https://github.com/vmware-tanzu/antrea/releases/download/v0.13.4/antrea.yml"
             name = "antrea"
           }
           master = {
@@ -653,7 +653,7 @@ variable "vmw" {
           name = "cluster3"
           netplanApply = true
           username = "ubuntu"
-          version = "1.18.2-00"
+          version = "1.21.3-00"
           namespaces = [
             {
               name= "avi-system"
@@ -685,7 +685,7 @@ variable "vmw" {
             pod = "10.244.0.0/16"
           }
           docker = {
-            version = "5:19.03.8~3-0~ubuntu-bionic"
+            version = "5:20.10.7~3-0~ubuntu-bionic"
           }
           service = {
             type = "ClusterIP"

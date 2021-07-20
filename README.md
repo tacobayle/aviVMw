@@ -57,3 +57,4 @@ cd ~ ; git clone https://github.com/tacobayle/aviVmw ; cd aviVmw ; terraform ini
 ## compatibility matrix
 - tag v3.18: vCenter 6.7.0, K8S 1.18.2-00, Avi 20.1.3
 - tag v3.24: vCenter 6.7.0, K8S 1.18.2-00, Avi 20.1.6
+- tag v3.25: vCenter 6.7.0, K8S 1.21.3-00, Avi 20.1.6
