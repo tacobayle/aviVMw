@@ -51,6 +51,7 @@ write_files:
       if [ "$argocd" = true ] ; then
       wget ${argocd_manifest_url} -O argocd.yml
       for image in $(cat argocd.yml | grep 'image: ' | awk -F 'image: ' '{print $2}'); do docker pull $image ; done
+      fi
       #
       #
       #

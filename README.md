@@ -48,9 +48,9 @@ TF_VAR_avi_user=admin
 - Create a yaml variable file - in the jump server
 - Call ansible to do the Avi configuration (git clone)
 
-## Run the terraform:
+## Run terraform:
 ```
-cd ~ ; git clone https://github.com/tacobayle/aviVmw ; cd aviVmw ; terraform init ; terraform apply -auto-approve
+cd ~ ; rm -fr aviVmw ; git clone https://github.com/tacobayle/aviVmw ; cd aviVmw ; terraform init ; terraform apply -auto-approve
 # the terraform will output the command to destroy the environment.
 ```
 
