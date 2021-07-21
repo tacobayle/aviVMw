@@ -43,7 +43,11 @@ write_files:
       ping www.google.com -c 1
       ping foo -c 1
       while [ $? -ne 0 ] ; do docker login --username ${docker_registry_username} --password ${docker_registry_password} ; sleep 5 ; done
+      #
+      # cni image download
+      #
       wget ${cniUrl} -O cni.yml
+      for image in $(cat cni.yml | grep 'image: ' | awk -F 'image: ' '{print $2}'); do docker pull $image ; done
       #
       # argo-cd image download
       #
