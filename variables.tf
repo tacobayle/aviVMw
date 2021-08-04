@@ -542,7 +542,7 @@ variable "vmw" {
           ]
           ako = {
             namespace = "avi-system"
-            version = "1.4.2"
+            version = "1.4.3"
             helm = {
               url = "https://projects.registry.vmware.com/chartrepo/ako"
             }
@@ -605,7 +605,7 @@ variable "vmw" {
           ]
           ako = {
             namespace = "avi-system"
-            version = "1.4.2"
+            version = "1.4.3"
             helm = {
               url = "https://projects.registry.vmware.com/chartrepo/ako"
             }
@@ -669,7 +669,7 @@ variable "vmw" {
           ]
           ako = {
             namespace = "avi-system"
-            version = "1.4.2"
+            version = "1.4.3"
             helm = {
               url = "https://projects.registry.vmware.com/chartrepo/ako"
             }
